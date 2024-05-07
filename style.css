@@ -1,0 +1,178 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  cursor: pointer;
+}
+
+html {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.header {
+  text-align: center;
+  background-color: rgb(158, 153, 153);
+  padding: 3rem 1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.header_title {
+  margin: 0;
+  text-shadow: 2px 2px black, 4px 4px rgb(80, 77, 77);
+}
+
+.button {
+  all: unset;
+  display: block;
+  word-break: keep-all;
+  word-wrap: normal;
+  color: white;
+  background-color: rgb(107, 170, 14);
+  padding: 0.25em 0.4em;
+  border-radius: 0.3em;
+  border: 0.1em solid black;
+  box-shadow: 3px 3px 0px rgb(34, 34, 34);
+}
+
+.button:focus {
+  border: 0.1em;
+}
+
+.button:active {
+  box-shadow: none;
+}
+.main {
+  padding: 1rem;
+  max-width: 35ch;
+  margin: 0 auto;
+}
+
+.main > * + * {
+  margin-top: 3rem;
+}
+
+.radio-button {
+  all: unset;
+  display: inline-block;
+  flex-grow: 1;
+  width: auto;
+  background-color: white;
+  padding: 0.5em;
+  border: 0.1em solid black;
+  border-radius: 50%;
+}
+
+.radio-button:checked {
+  background-color: rgb(107, 170, 14);
+}
+
+.radio-button:focus {
+  border: 0.1em solid black;
+}
+
+.todo-input {
+  display: flex;
+}
+
+.todo-input .todo-input_input {
+  margin-right: 1em;
+}
+
+.todo-input_input {
+  all: unset;
+  display: inline-block;
+  flex-grow: 1;
+  width: auto;
+  background-color: white;
+  padding: 0.5em;
+  border: 0.1em solid black;
+  border-radius: 0.3em;
+}
+
+.todo-input_input:focus {
+  border: 0.1em solid red;
+}
+
+.filter-and-options > * + * {
+  margin-top: 1rem;
+}
+
+.radio-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 0.5em 0.25em;
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-list > * + * {
+  margin-top: 0.5rem;
+}
+
+.todo-item {
+  background-color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  display: flex;
+  align-items: center;
+  border: 0.1em solid black;
+}
+
+.todo-item:focus-within {
+  box-shadow: 3px 3px 0;
+  border: 0.1em solid black;
+}
+
+.todo-item > .todo-item_checkbox {
+  margin-right: 1em;
+}
+
+.todo-item_checkbox {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.1em;
+  width: 0.75em;
+  height: 0.75em;
+  border: 0.1em solid black;
+  background-color: white;
+}
+
+.todo-item_checkbox:checked {
+  background-color: rgb(107, 170, 14);
+}
+
+.todo-item_text {
+  flex-grow: 1;
+}
+
+.line {
+  text-decoration: line-through;
+}

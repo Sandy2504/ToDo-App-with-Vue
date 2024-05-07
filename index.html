@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-App-with-Vue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <h1 class="header_title">TodoApp</h1>
+        </header>
+        <main class="main">
+            <form class="todo-input">
+                <input class="todo-input_input" v-model="descVal" placeholder="Todo Eingabe" type="text" name="" id="">
+                <button class="todo-input_button button" @click.prevent="addToDo">Add</button>
+            </form>
+            <section class="filter-and-options">
+                <h2>Filter & Options</h2>
+                <div class="radio-container" id="radio-container">
+                    <input class="radio-button" checked type="radio" v-model="todosVal" value="All" name="todos"
+                        id="all">
+                    <label for="all">all</label>
+                    <input class="radio-button" type="radio" v-model="todosVal" value="ToDos" name="todos" id="open">
+                    <label for="open">Open Todos</label>
+                    <input class="radio-button" type="radio" v-model="todosVal" value="Done" name="todos" id="done">
+                    <label for="done">Done Todos</label>
+                </div>
+                <button class="button" @click="deleteDoneTodos" type="button">Remove Done Todos</button>
+            </section>
+            <section class="todos">
+                <h2>Your Todos</h2>
+                <ul>
+                    <li class="todo-item" v-for="todo in filteredTodos" :key="todo.id">
+                        <input class="todo-item_checkbox" v-model="todo.done" type="checkbox" :checked="todo.done"
+                            :name="todo.id" @change="doneTask(todo)" :id="todo.id">
+                        <label :class="{ 'line': todo.done }" class="todo-item_text" :for="todo.id">{{ todo.description
+                            }}</label>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@latest"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
